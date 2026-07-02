@@ -24,4 +24,4 @@ Take the Nyx dataset as an example:
   python main.py --config_file Nyx.yaml --mode inf --device 0
   ```
 
-You can modify the config file under configs to configure the model settings, such as log2_map_size in NGP and parameter emebedding size. 
+You can modify the .yaml file under configs folder to configure the model settings, such as log2_map_size in NGP and parameter emebedding size. 
