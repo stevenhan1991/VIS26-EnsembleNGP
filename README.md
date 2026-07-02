@@ -1,6 +1,6 @@
 # EnsembleNGP
 
-This is the official code for paper: EnsembleNGP: Exploring Time-Varying Volumetric Ensemble Data via Parameter and Spatial Space Decomposition
+This is the official code for our paper: EnsembleNGP: Exploring Time-Varying Volumetric Ensemble Data via Parameter and Spatial Space Decomposition
 
 ## Required Libraries
 
