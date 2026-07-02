@@ -1,0 +1,89 @@
+model:
+  model_path: '../Model/Nyx/'
+  result_path: '../Result/Nyx/'
+  ngp:
+    log2_hashmap_size: 18
+    base_resolution: 16
+    spatial_dim: 3
+    ensemble_dim: 3
+    out_dim: 1
+    num_layers: 5
+    hidden_dim: 128
+    desired_resolution: 128
+    num_levels: 13
+  ensemblenet:
+    in_dim: 4
+    out_dim: 1
+  fVSRN:
+    n_outputs: 1
+    num_positional_encoding_terms: 4
+    n_dims: 3
+    n_layers: 2
+    nodes_per_layer: 128
+    n_features: 3 
+  coordnet:
+    in_features: 7
+    out_features: 1
+  SIREN:
+    in_features: 7
+    out_features: 1
+  APMGSRN:
+    n_outputs: 1
+    nodes_per_layer: 128
+    n_dims: 3
+    n_layers: 2
+    n_grids: 32
+    n_features: 2
+  exploreableinr:
+    dim3d: 64
+  DRR:
+    out_dim: 1
+    hidden_dim: 128
+    spatial_fdim: 128
+    decoder:
+      feat_dim: 128
+      num_layers: 2
+      out_dim: 128
+    encoder:
+      num_feat: 2
+      prerefine_feat_up_kwargs:
+        g: 8
+    spatial_refiner:
+      feat_dim: 128
+      out_dim: 128
+      num_layers: 2
+      hidden_mult: 4
+      block_activation: ReLU
+      use_norm: true
+      skip_connection: true
+    cond_refiner:
+      feat_dim: 64
+      out_dim: 64
+      num_layers: 2
+      hidden_mult: 2
+      block_activation: ReLU
+      use_norm: true
+      skip_connection: true
+    latent:
+      cond_dim: 4
+      line_dims_list:
+        - [2, 2, 2, 2]
+        - [4, 4, 4, 4]
+        - [8, 8, 8, 8]
+        - [16, 16, 16, 16]
+      latent_shape: [4]
+      latent_init_kwargs:
+        a: -0.001
+        b: 0.001
+
+
+
+
+GPU_Sampling: True
+
+data:
+  dataset: 'Nyx'
+  num_ensemble_training: 200
+  time_steps: 100
+  factor: 1
+  
